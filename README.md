@@ -2,4 +2,4 @@
 **there is the README**
 
 # :)
-*i dont't like to write a readme just because i'm lazy :)
+* i dont't like to write a readme just because i'm lazy :)
