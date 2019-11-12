@@ -24,7 +24,7 @@ linklist creatlist(int n)
 	head=(linklist)malloc(sizeof(listnode));
 	head->next=NULL;
 	p2=head;
-	printf("please input the records of the chain/n");
+	printf("please input the records of the chain\n");
 	for(i=0;i<n;i++)
 	{	
 		p1=(linklist)malloc(sizeof(listnode));
@@ -38,8 +38,8 @@ linklist creatlist(int n)
 void print(linklist head, int n)
 {
 	if(head==NULL)
-		printf("list null/n");
-	printf("Now these %d records are:/n",n);
+		printf("list null\n");
+	printf("Now these %d records are:\n",n);
 	p=head->next;
 	printf("%4d",p->data);
 	count=1;
@@ -49,21 +49,21 @@ void print(linklist head, int n)
 		p=p->next;
 		printf("%4d",p->data);
 		if(!(count%10))
-			printf("/n");
+			printf("\n");
 		
 	}
 }
 datatype push(seqstack *s, int x)
 {
 	if(s->top==stacksize-1)
-		printf("the stack is overflow/n");
+		printf("the stack is overflow\n");
 	else 
 		s->data[++s->top]=x;
 }
 datatype pop(seqstack *s)
 {
 	if(s->top==-1)
-		printf("the stack is empty/n");
+		printf("the stack is empty\n");
 	else 
 		return (s->data[s->top--]);
 }
@@ -92,19 +92,19 @@ void invertedlist(linklist head,int n)
 		temp=pop(&s);
 		printf("%5d",temp);
 		if(!((i+1)%10))
-			printf("/n");
+			printf("\n");
 	}
-	printf("/n");
+	printf("\n");
 }
 int main()
 {
 	linklist head;
 	int n;
-	printf("Please input the value of n:/n");
+	printf("Please input the value of n:\n");
 	scanf("%d",&n);
 	head=creatlist(n);
 	print(head,n);
-	printf("After inverting,the records of the chain are:/n");
+	printf("After inverting,the records of the chain are:\n");
 	invertedlist(head,n);
 	system("pause");
 	return 0;
