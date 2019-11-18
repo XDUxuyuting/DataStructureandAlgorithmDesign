@@ -41,7 +41,7 @@ linklist*Get(linklist*head,int i)//按序号查找单链表
 {
 	linklist*p=head;
 	int j=0;
-	while(p->next!=NULL&&j<i)//按序号查找 
+	while(p->next!=NULL&&j<i)//按序号查找           *注意j<i
 	{
 		p=p->next;
 		j++;
@@ -57,12 +57,12 @@ linklist*Located(linklist*head,datatype key)//按值查找
 	{
 		p=p->next;
 	}
-	return p; 	
+	return p; 	//                             *如果没查找到，此时P也是空指针，所以直接返回P
 } 
 void Insert(linklist*L, datatype x, int i)//单链表插入 
 {
 	linklist*p,*s;
-	p=Get(L,i-1);
+	p=Get(L,i-1);                //                *注意使用已封装好的查找函数
 	if(p==NULL)
 		printf("查不到插入位置");
 	else
