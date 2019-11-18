@@ -64,6 +64,38 @@ int Delete(sequenlist *L, int i)//顺序表删除
 		return 1;
 	} 
 }
+int Length(sequenlist*L)
+{
+	return L->last;
+}
+int Locate(sequenlist*L, datatype x)
+{
+	int i=0;
+	while(i<L->last)
+		if(L->data[i]!=x)i++;
+		else return i;//这里可不加大括号 
+	return 0;
+}
+void del_node(sequenlist*L,datatype key)
+{
+	int i=0;
+	i=Locate(L,key);
+	while(i)
+	{
+		if(Delete(L,i)==0)break;
+		i=Locate(L, key);//??????我认为这代码有问题
+	}
+} 
+void PrintList(sequenlist*L)
+{
+	int i=0;
+	for(i=0;i<L->last;i++)
+	{
+		printf("%5d\n",L->data[i]);
+	}
+}
+
+
 
 
 
