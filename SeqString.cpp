@@ -47,4 +47,27 @@ int StrCat(char *s1,char *s2)
 	s1[i]='\0';
 	return 1;
 }
+int Index(SeqString *T,SeqString *P,int pos)
+{
+	int i,j;
+	i=pos;
+	j=1;
+	while(i<=T->length&&j<=P->length)
+	{
+		if(T->ch[i-1]==P->ch[j-1])
+		{
+			i++; 
+			j++;
+		} //接着比较后面的字符 
+		else
+		{
+			i=i-j+2;//先退回原来的位置（i-j+1)再加一 
+			j=1;
+		} 
+	}
+	if(j>P->length)//匹配 
+		return i-P->length; 
+	else return 0;//不匹配 
+}
+
 
